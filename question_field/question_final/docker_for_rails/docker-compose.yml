@@ -1,0 +1,42 @@
+version: '3'
+services:
+# Rails APP Setting
+  app:
+    container_name: is_ruby
+    build:
+      context: .
+      dockerfile: ./docker/ruby/Dockerfile
+    environment:
+      MYSQL_DATABASE: db_test
+      MYSQL_USER: db_test
+      MYSQL_PASSWORD: db_test
+      MYSQL_ROOT_PASSWORD: db_test
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/app
+      - ./public:/app/public
+      - ./tmp:/app/tmp
+      - ./log:/app/log
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+# MySQL Setting
+  db:
+    container_name: is_mysql
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    environment:
+      MYSQL_DATABASE: db_test
+      MYSQL_USER: db_test
+      MYSQL_PASSWORD: db_test
+      MYSQL_ROOT_PASSWORD: db_test
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3309:3306"
+volumes:
+  db-data:
