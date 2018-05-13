@@ -7,5 +7,17 @@ docker imageを削除したい
 ## A)コマンドや回答
 
 ```
+docker images <- ローカルにあるimageを確認する
+docker ps and docker ps -a で現在のコンテナ利用状況を確認する
+docker rmi -f ruby:2.3.1  <- 確実に使ってない、もういらなくなったら強制的に消すために -f
 $
 ```
+
+## 正解発表
+
+正解！
+
+```
+$ docker network ls
+```
+も一応してあげると良い！
