@@ -1,4 +1,5 @@
 ## Q)docker-compose.ymlについて
+14日に解答  
 
 docker-compose.ymlの基本的な構成は以下の通りである
 
@@ -85,4 +86,3 @@ volumes:
 
 - image  
   コンテナの元になるもの  
-  
