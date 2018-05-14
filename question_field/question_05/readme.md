@@ -61,3 +61,28 @@ volumes:
 
 
 ## A)コマンドや回答
+
+- build
+  Docker imageの作成  
+
+- container_name  
+  コンテナの名前  
+
+- context  
+  DockerFileの内容に従ってbuildを実行する  
+
+- Dockerfile  
+  イメージをビルドするときに使う設定ファイル  
+
+- volumes  
+  ホストや他のコンテナのマウントするディレクトリを指定する  
+
+- depends_on  
+  docker-composer.ymlないで、コンテナの起動順序を定義する  
+
+- ports  
+  コンテナな側のポートとホスト側のポートを関連付ける  
+
+- image  
+  コンテナの元になるもの  
+  
