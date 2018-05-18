@@ -12,6 +12,9 @@ ENV work_dir /rails_app
 RUN mkdir ${work_dir}
 WORKDIR ${work_dir}
 
+COPY ./Gemfile /${work_dir}/Gemfile
+COPY ./Gemfile.lock /${work_dir}/Gemfile.lock
+
 RUN bundle install
 
 # sockets dir setting
